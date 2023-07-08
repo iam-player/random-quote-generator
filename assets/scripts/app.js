@@ -5,6 +5,8 @@ const buttons = document.querySelectorAll("button");
 const categories = document.getElementById("categories");
 const categoryArray = ["age", "alone", "amazing", "anger", "architecture", "art", "attitude", "beauty", "best", "birthday", "business", "car", "change", "communications", "computers", "cool", "courage", "dad", "dating", "death", "design", "dreams", "education", "environmental", "equality", "experience", "failure", "faith", "family", "famous", "fear", "fitness", "food", "forgiveness", "freedom", "friendship", "funny", "future", "god", "good", "government", "graduation", "great", "happiness", "health", "history", "home", "hope", "humor", "imagination", "inspirational", "intelligence", "jealousy", "knowledge", "leadership", "learning", "legal", "life", "love", "marriage", "medical", "men", "mom", "money", "morning", "movies", "success"];
 
+categories.innerHTML += '<option value="art" disabled selected>art (default)</option>'
+
 for(let i = 0; i < categoryArray.length; i++){
     categories.innerHTML += '<option value="' + categoryArray[i] + '">' + categoryArray[i] + '</option>';
 };
@@ -25,7 +27,7 @@ const generateQuoteFromAPI = () => {
     success: function (result) {
       for (let index in result) {
         quote.innerText = result[index]["quote"];
-        author.innerText = "~ " + result[index]["author"];
+        author.innerText = result[index]["author"];
       }
     },
     error: function ajaxError(jqXHR) {

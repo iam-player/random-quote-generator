@@ -75,6 +75,18 @@ main {
   font-weight: 500;
   color: #8000ff;
 }
+#author::before {
+  content: "~ ";
+}
+
+select {
+  background-color: white;
+  border: 0;
+  outline: 0;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  padding: 8px 10px;
+}
 
 button {
   color: white;
