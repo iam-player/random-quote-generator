@@ -146,16 +146,24 @@ label {
   margin: 20px 0;
   font-size: 1rem;
   font-weight: 500;
-  color: #8000ff;
+  background: #BC00FF;
+  background: linear-gradient(to right, #BC00FF 0%, #7400e0 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 select {
-  background-color: white;
-  color: #8000ff;
+  color: white;
   border: 0;
   outline: 0;
   border-radius: 15px;
   padding: 8px 10px;
+  background: linear-gradient(to right, #BC00FF 0%, #7400e0 100%);
+}
+
+option {
+  color: black;
 }
 
 button {
@@ -170,7 +178,7 @@ button {
           user-select: none;
 }
 button:hover {
-  background-color: #8000ff;
+  background: linear-gradient(to right, #BC00FF 0%, #7400e0 100%);
   color: white;
-  transition: 0.2s ease;
+  transition: 0.2s ease-out;
 }/*# sourceMappingURL=main.css.map */
