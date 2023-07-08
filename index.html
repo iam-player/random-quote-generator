@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Quote Generator</title>
-    
-    <link rel="stylesheet" href="./assets/styles/main.css">
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
-    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
-    crossorigin="anonymous"></script>
-</head>
-<body>
-    <main>
-        <div class="container">
-            <h2 id="quote">"Things are beautiful if you love them."</h2>
-            <h3 id="author">~ Jean Anouilh</h3>
-        </div>
-        <button type="submit">Generate Quote</button>
-    </main>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Random Quote Generator</title>
 
-    <script src="./assets/scripts/app.js"></script>
-</body>
+		<link rel="stylesheet" href="./assets/styles/main.css" />
+		<script
+			src="https://code.jquery.com/jquery-3.7.0.min.js"
+			integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+			crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<main>
+			<div class="container">
+				<h2 id="quote">Things are beautiful if you love them.</h2>
+				<h3 id="author">~ Jean Anouilh</h3>
+				<select name="" id="categories">
+					<option value="" disabled selected>Category:</option>
+				</select>
+			</div>
+			<button type="submit">Generate Quote</button>
+		</main>
+
+		<script src="./assets/scripts/app.js"></script>
+	</body>
 </html>

@@ -1,50 +1,51 @@
-@use './base/reset';
-@use './base/font';
+@use "./base/reset";
+@use "./base/font";
 
-main{
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgb(17, 17, 17);
-    flex-direction: column;
-    font-family: 'Poppins', Tahoma, sans-serif;
+main {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgb(17, 17, 17);
+	flex-direction: column;
+	font-family: "Poppins", Tahoma, sans-serif;
 }
 
-.container{
-    text-align: center;
-    max-width: 600px;
-    color: white;
+.container {
+	text-align: center;
+	max-width: 600px;
+	color: white;
 }
 
-#quote{
-    font-size: 1.5rem;
+#quote {
+	font-size: 1.5rem;
 
-    &::before, &::after{
-        content: '"';
-    }
+	&::before,
+	&::after {
+		content: '"';
+	}
 }
 
-#author{
-    margin: 20px 0;
-    font-size: 1rem;
-    font-weight: 500;
-    color:#8000ff;
+#author {
+	margin: 20px 0;
+	font-size: 1rem;
+	font-weight: 500;
+	color: #8000ff;
 }
 
-button{
-    color: white;
-    padding: 10px 15px;
-    margin-top: 50px;
-    border-radius: 15px;
-    background-color: white;
-    color: black;
+button {
+	color: white;
+	padding: 10px 15px;
+	margin-top: 50px;
+	border-radius: 15px;
+	background-color: white;
+	color: black;
+	user-select: none;
 
-    &:hover{
-        background-color: #8000ff;
-        color: white;
-        transition: .2s ease;
-    }
+	&:hover {
+		background-color: #8000ff;
+		color: white;
+		transition: 0.2s ease;
+	}
 }
-
