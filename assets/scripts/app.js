@@ -18,22 +18,26 @@ categories.addEventListener("change", () => {
 });
 
 const generateQuoteFromAPI = () => {
-  let category = categories.value;
-  $.ajax({
-    method: "GET",
-    url: "https://api.api-ninjas.com/v1/quotes?category=" + category,
-    headers: { "X-Api-Key": "FN/HQ14/tt17sSkt8IXgrw==B4cndcIf8WAKllct" },
-    contentType: "application/json",
-    success: function (result) {
-      for (let index in result) {
-        quote.innerText = result[index]["quote"];
-        author.innerText = result[index]["author"];
-      }
-    },
-    error: function ajaxError(jqXHR) {
-      console.error("Error: ", jqXHR.responseText);
-    },
-  });
+    quote.innerHTML = '<div class="loading loading01"><span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span><span>.</span><span>.</span></div>';
+    author.innerHTML = '<div class="loading-author loading01"><span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span><span>.</span><span>.</span></div>';
+
+    let category = categories.value;
+        $.ajax({
+        method: "GET",
+        url: "https://api.api-ninjas.com/v1/quotes?category=" + category,
+        headers: { "X-Api-Key": "FN/HQ14/tt17sSkt8IXgrw==B4cndcIf8WAKllct" },
+        contentType: "application/json",
+        success: function (result) {
+        for (let index in result) {
+            quote.classList.remove("loading");
+            quote.innerText = '"' + result[index]["quote"] + '"';
+            author.innerText = '~ ' + result[index]["author"];
+        }
+        },
+        error: function ajaxError(jqXHR) {
+        console.error("Error: ", jqXHR.responseText);
+        },
+    });
 };
 
 buttons.forEach((button) =>

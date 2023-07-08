@@ -45,6 +45,70 @@ button {
   all: unset;
 }
 
+.loading {
+  font-size: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  text-align: center;
+}
+
+.loading-author {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #8000ff;
+}
+
+.loading01 span {
+  -webkit-animation: loading01 1.4s infinite alternate;
+          animation: loading01 1.4s infinite alternate;
+}
+.loading01 span:nth-child(1) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.loading01 span:nth-child(2) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+.loading01 span:nth-child(3) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+.loading01 span:nth-child(4) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+.loading01 span:nth-child(5) {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+.loading01 span:nth-child(6) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+.loading01 span:nth-child(7) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+@-webkit-keyframes loading01 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes loading01 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 main {
   height: 100vh;
   width: 100%;
@@ -65,18 +129,12 @@ main {
 #quote {
   font-size: 1.5rem;
 }
-#quote::before, #quote::after {
-  content: '"';
-}
 
 #author {
   margin: 20px 0;
   font-size: 1rem;
   font-weight: 500;
   color: #8000ff;
-}
-#author::before {
-  content: "~ ";
 }
 
 select {

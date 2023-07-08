@@ -1,0 +1,32 @@
+.loading {
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  .loading-author{
+    font-family: 'Poppins', sans-serif;
+	font-size: 1rem;
+	font-weight: 500;
+	color: #8000ff;
+  }
+  
+  .loading01 {
+    span {
+      animation: loading01 1.4s infinite alternate;
+      @for $i from 0 through 6 {
+        &:nth-child(#{$i+1}) {
+          animation-delay: #{$i*.1}s;
+        }
+      }
+    }
+  }
+  @keyframes loading01 {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
