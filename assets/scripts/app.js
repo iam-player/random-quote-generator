@@ -5,8 +5,9 @@ const buttons = document.querySelectorAll("button");
 const categories = document.getElementById("categories");
 const categoryArray = ["computers", "art", "age", "alone", "amazing", "anger", "architecture", "attitude", "beauty", "best", "birthday", "business", "car", "change", "communications", "computers", "cool", "courage", "dad", "dating", "death", "design", "dreams", "education", "environmental", "equality", "experience", "failure", "faith", "family", "famous", "fear", "fitness", "food", "forgiveness", "freedom", "friendship", "funny", "future", "god", "good", "government", "graduation", "great", "happiness", "health", "history", "home", "hope", "humor", "imagination", "inspirational", "intelligence", "jealousy", "knowledge", "leadership", "learning", "legal", "life", "love", "marriage", "medical", "men", "mom", "money", "morning", "movies", "success"];
 
+console.log(categoryArray[0]);
 
-if(!localStorage.length){
+if(!localStorage.length || localStorage.getItem("data") === "null"){
     localStorage.setItem("data", categoryArray[0]);
 } else {
     categories.innerHTML += '<option value="' + localStorage.getItem("data") + '" selected>' + localStorage.getItem("data") + '</option>';
