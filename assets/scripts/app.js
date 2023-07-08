@@ -3,21 +3,28 @@ const author = document.getElementById("author");
 const buttons = document.querySelectorAll("button");
 
 const categories = document.getElementById("categories");
-const categoryArray = ["art", "age", "alone", "amazing", "anger", "architecture", "attitude", "beauty", "best", "birthday", "business", "car", "change", "communications", "computers", "cool", "courage", "dad", "dating", "death", "design", "dreams", "education", "environmental", "equality", "experience", "failure", "faith", "family", "famous", "fear", "fitness", "food", "forgiveness", "freedom", "friendship", "funny", "future", "god", "good", "government", "graduation", "great", "happiness", "health", "history", "home", "hope", "humor", "imagination", "inspirational", "intelligence", "jealousy", "knowledge", "leadership", "learning", "legal", "life", "love", "marriage", "medical", "men", "mom", "money", "morning", "movies", "success"];
+const categoryArray = ["computers", "art", "age", "alone", "amazing", "anger", "architecture", "attitude", "beauty", "best", "birthday", "business", "car", "change", "communications", "computers", "cool", "courage", "dad", "dating", "death", "design", "dreams", "education", "environmental", "equality", "experience", "failure", "faith", "family", "famous", "fear", "fitness", "food", "forgiveness", "freedom", "friendship", "funny", "future", "god", "good", "government", "graduation", "great", "happiness", "health", "history", "home", "hope", "humor", "imagination", "inspirational", "intelligence", "jealousy", "knowledge", "leadership", "learning", "legal", "life", "love", "marriage", "medical", "men", "mom", "money", "morning", "movies", "success"];
+
+
+if(!localStorage.length){
+    localStorage.setItem("data", categoryArray[0]);
+} else {
+    categories.innerHTML += '<option value="' + localStorage.getItem("data") + '" selected>' + localStorage.getItem("data") + '</option>';
+}
 
 for(let i = 0; i < categoryArray.length; i++){
     categories.innerHTML += '<option value="' + categoryArray[i] + '">' + categoryArray[i] + '</option>';
 };
 
 categories.addEventListener("change", () => {
-  category = categories.value;
+  category = localStorage.setItem("data", categories.value);
 });
 
 const generateQuoteFromAPI = () => {
     quote.innerHTML = '<div class="loading loading01"><span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span><span>.</span><span>.</span></div>';
     author.innerHTML = '<div class="loading-author loading01"><span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span><span>.</span><span>.</span></div>';
 
-    let category = categories.value;
+        category = localStorage.getItem("data");
         $.ajax({
         method: "GET",
         url: "https://api.api-ninjas.com/v1/quotes?category=" + category,
