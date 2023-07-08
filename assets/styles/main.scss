@@ -20,6 +20,10 @@ main{
 
 #quote{
     font-size: 1.5rem;
+
+    &::before, &::after{
+        content: '"';
+    }
 }
 
 #author{

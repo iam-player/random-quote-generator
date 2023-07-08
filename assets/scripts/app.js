@@ -11,7 +11,7 @@ const generateQuoteFromAPI = clickEvent => {
         contentType: 'application/json',
         success: function(result) {
             for (let index in result){
-                quote.innerText = '"' + result[index]["quote"] + '"';
+                quote.innerText = result[index]["quote"];
                 author.innerText = "~ " + (result[index]["author"]);
             }       
         },
